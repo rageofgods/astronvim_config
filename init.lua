@@ -25,7 +25,8 @@ local config = {
   },
 
   -- Set colorscheme to use
-  colorscheme = "default_theme",
+  -- colorscheme = "default_theme",
+  colorscheme = "onedark",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -238,6 +239,13 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      {
+        "navarasu/onedark.nvim",
+        require("onedark").setup {
+          style = "darker",
+        },
+        require("onedark").load(),
+      },
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
