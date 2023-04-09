@@ -15,9 +15,3 @@ git clone https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim
 ```sh
 git clone https://github.com/rageofgods/astronvim_config.git ~/.config/nvim/lua/user
 ```
-
-- Initialize AstroVim
-
-```sh
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-```
