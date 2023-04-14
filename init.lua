@@ -51,11 +51,22 @@ return {
     },
     {
       "petertriho/nvim-scrollbar",
-      ft = "*",
+      event = "User AstroFile",
       config = function()
         require("scrollbar").setup {
           handlers = {
             gitsigns = true,
+          },
+          excluded_buftypes = {
+            "terminal",
+          },
+          excluded_filetypes = {
+            "prompt",
+            "TelescopePrompt",
+            "dashboard",       -- remove scrollbar from startup dashboard
+            "dashboardPrompt", -- remove scrollbar from dashboard input prompt for new file
+            "neo-tree",
+            "neo-tree-popup",
           },
         }
       end,
