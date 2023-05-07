@@ -1,10 +1,12 @@
 return {
   colorscheme = "onedark",
   plugins = {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      -- Automatically install missing parsers when entering buffer
-      auto_install = true,
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        -- Automatically install missing parsers when entering buffer
+        auto_install = true,
+      },
     },
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -16,7 +18,7 @@ return {
     },
     {
       "goolord/alpha-nvim",
-      opts = function(_, opts)      -- override the options using lazy.nvim
+      opts = function(_, opts) -- override the options using lazy.nvim
         opts.section.header.val = { -- change the header section value
           [[                                                                       ]],
           [[  ██████   █████                   █████   █████  ███                  ]],
@@ -63,7 +65,7 @@ return {
           excluded_filetypes = {
             "prompt",
             "TelescopePrompt",
-            "dashboard",       -- remove scrollbar from startup dashboard
+            "dashboard", -- remove scrollbar from startup dashboard
             "dashboardPrompt", -- remove scrollbar from dashboard input prompt for new file
             "neo-tree",
             "neo-tree-popup",
@@ -146,7 +148,7 @@ return {
           -- * a percentage of the width / height of the editor when <= 1
           -- * a function that returns the width or the height
           width = 120, -- width of the Zen window
-          height = 1,  -- height of the Zen window
+          height = 1, -- height of the Zen window
           -- by default, no options are changed for the Zen window
           -- uncomment any of the options below, or add other vim.wo options you want to apply
           options = {
@@ -164,12 +166,12 @@ return {
           -- comment the lines to not apply the options
           options = {
             enabled = true,
-            ruler = false,                -- disables the ruler text in the cmd line area
-            showcmd = false,              -- disables the command in the last line of the screen
+            ruler = false, -- disables the ruler text in the cmd line area
+            showcmd = false, -- disables the command in the last line of the screen
           },
-          twilight = { enabled = false },  -- enable to start Twilight when zen mode opens
+          twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
           gitsigns = { enabled = false }, -- disables git signs
-          tmux = { enabled = true },      -- disables the tmux statusline
+          tmux = { enabled = true }, -- disables the tmux statusline
           -- this will change the font size on kitty when in zen mode
           -- to make this work, you need to set the following kitty options:
           -- - allow_remote_control socket-only
@@ -177,7 +179,7 @@ return {
           kitty = {
             enabled = false,
             font = "+4", -- font size increment
-          },             -- this will change the font size on alacritty when in zen mode
+          }, -- this will change the font size on alacritty when in zen mode
           -- requires  Alacritty Version 0.10.0 or higher
           -- uses `alacritty msg` subcommand to change font size
           alacritty = {
